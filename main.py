@@ -7,26 +7,26 @@ points = {
 
 words = ["дом", "кошка", "собака", "машина", "игра"]
 
-def is_odd(number: int):
-    if number % 2 == 0:
-        return False
-    else:
-        return True
+# def is_odd(number: int):
+#     if number % 2 == 0:
+#         return False
+#     else:
+#         return True
 
 while True:
-    a = random.randint(10, 120)
-    if is_odd(a):
-        continue
-    b = random.randint(10, 120)
-    if is_odd(b):
-        continue
-    op = random.choice(("+", "-"))
-    if op == "+":
-        ans = a+b
-        user = input(f"{a} + {b} = ")
-    else:
-        ans = a - b
-        user = input(f"{a} - {b} = ")
+    # a = random.randint(10, 120)
+    # if is_odd(a):
+    #     continue
+    # b = random.randint(10, 120)
+    # if is_odd(b):
+    #     continue
+    # op = random.choice(("+", "-"))
+    # if op == "+":
+    #     ans = a+b
+    #     user = input(f"{a} + {b} = ")
+    # else:
+    #     ans = a - b
+    #     user = input(f"{a} - {b} = ")
     a = random.choice(words)
     b = random.choice(words)
     ans = a+b
