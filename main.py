@@ -27,6 +27,10 @@ while True:
     else:
         ans = a - b
         user = input(f"{a} - {b} = ")
+    a = random.choice(words)
+    b = random.choice(words)
+    ans = a+b
+    user = input(f"{a} + {b} = ")
     if user == str(ans):
         print("Верно!")
         points["player"] += 1
