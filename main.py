@@ -33,8 +33,8 @@ while True:
     user = input(f"{a} + {b} = ")
     if user == str(ans):
         print("Верно!")
-        points["player"] += 1
+        points["player"] += 2
     else:
         print("Ты ошибся! Попробуй еще раз!")
-        points["comp"] += 1
+        points["comp"] += 2
     print(f'Счет: {points["player"]}:{points["comp"]}')
