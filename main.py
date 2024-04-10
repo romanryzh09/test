@@ -5,6 +5,8 @@ points = {
     "player": 0
 }
 
+words = ["дом", "кошка", "собака", "машина", "игра"]
+
 def is_odd(number: int):
     if number % 2 == 0:
         return False
