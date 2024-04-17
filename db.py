@@ -35,13 +35,19 @@ s = Session()
 # s.merge(hero)
 # s.commit()
 
-for x in range(1, 400):
-    name = fake.first_name()
-    obj = Users(id= x, name= name)
-    s.merge(obj)
-    s.commit()
+# for x in range(1, 400):
+#     name = fake.first_name()
+#     obj = Users(id= x, name= name)
+#     s.merge(obj)
+#     s.commit()
 
 
+data = s.query(Users).all()
+# print(data)
 
+# print(data[0].name)
+
+for user in data:
+    print(user.name)
 
 Base.metadata.create_all(engine)
