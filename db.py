@@ -3,11 +3,15 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.orm import sessionmaker
+import faker
+import random
 
 DATABASE_URL = "postgresql+psycopg2://postgres:11062009Ryzhinkov@localhost/lesson"
 engine = create_engine(DATABASE_URL)
 
 Base = declarative_base()
+
+fake = faker.Faker("ru_RU")
 
 class Users(Base):
     __tablename__ = "users"
@@ -26,12 +30,16 @@ class Cats(Base):
 Session = sessionmaker(bind= engine)
 s = Session()
 
-hero = Users(id= 123, name= "Саня Карась")
+# hero = Users(id= 123, name= "Саня Карась")
 # s.add(hero)
-s.merge(hero)
-s.commit()
+# s.merge(hero)
+# s.commit()
 
-
+for x in range(1, 400):
+    name = fake.first_name()
+    obj = Users(id= x, name= name)
+    s.merge(obj)
+    s.commit()
 
 
 
