@@ -20,7 +20,9 @@ class Users(Base):
 Session = sessionmaker(bind= engine)
 s = Session()
 
-
+hero = Users(id= 123, name= "Саня Окунь")
+s.add(hero)
+s.commit()
 
 
 
