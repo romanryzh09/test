@@ -35,6 +35,20 @@ s = Session()
 # s.merge(hero)
 # s.commit()
 
+hero1 = Users(id= 400, name= "Палыч Шиномонтаж")
+hero2 = Users(id= 401, name= "Саныч Окунь")
+hero3 = Users(id= 402, name= "Сергеич Кедровый")
+hero4 = Users(id= 403, name= "Олегыч Бутылка")
+hero5 = Users(id= 404, name= "Дмитрич Резина")
+s.merge(hero1)
+s.merge(hero2)
+s.merge(hero3)
+s.merge(hero4)
+s.merge(hero5)
+s.commit()
+
+
+
 # for x in range(1, 400):
 #     name = fake.first_name()
 #     obj = Users(id= x, name= name)
