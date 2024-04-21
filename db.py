@@ -70,7 +70,10 @@ s = Session()
 # s.query(Users).filter(Users.id == 333).delete()
 # s.commit()
 
-s.query(Users).filter(Users.id <= 200).delete()
+# s.query(Users).filter(Users.id <= 200).delete()
+# s.commit()
+
+s.query(Users).filter(Users.id % 2 == 0).update({"name": "Jackie Chan"})
 s.commit()
 
 # for x in range(1, 400):
