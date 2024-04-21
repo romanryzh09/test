@@ -37,11 +37,11 @@ class Enemies(Base):
 Session = sessionmaker(bind= engine)
 s = Session()
 
-enem = Enemies(id= 101, name= "Окунь")
-enem1 = Enemies(id= 102, name= "Сом")
-s.merge(enem)
-s.merge(enem1)
-s.commit()
+# enem = Enemies(id= 101, name= "Окунь")
+# enem1 = Enemies(id= 102, name= "Сом")
+# s.merge(enem)
+# s.merge(enem1)
+# s.commit()
 
 # hero = Users(id= 123, name= "Саня Карась")
 # s.add(hero)
@@ -60,7 +60,18 @@ s.commit()
 # s.merge(hero5)
 # s.commit()
 
+# clients_a = s.query(Users).filter(Users.name.startswith("А"), Users.id > 300)
+# for user in clients_a:
+#     print(f"ID: {user.id}, name: {user.name}")
 
+# s.query(Users).filter(Users.id == 401).update({"name": "Дмитрич Карась"})
+# s.commit()
+
+# s.query(Users).filter(Users.id == 333).delete()
+# s.commit()
+
+s.query(Users).filter(Users.id <= 200).delete()
+s.commit()
 
 # for x in range(1, 400):
 #     name = fake.first_name()
@@ -74,7 +85,7 @@ data = s.query(Users).all()
 
 # print(data[0].name)
 
-for user in data:
-    print(user.name)
+# for user in data:
+#     print(user.name)
 
 Base.metadata.create_all(engine)
